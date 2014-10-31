@@ -12,6 +12,7 @@ pingpp.charges.create({
   amount: 100,
   order_no: "OrderNo",
   channel: pingpp.channel.ALIPAY,
+  currency: "cny",
   client_ip: "127.0.0.1",
   app: {id: "YOUR-APP-ID"}
 }, function(err, charge) {
