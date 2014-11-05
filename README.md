@@ -1,4 +1,4 @@
-Pingpp Node.js 
+Pingpp Node.js SDK
 =================
 
 ****
