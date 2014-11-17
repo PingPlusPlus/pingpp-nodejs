@@ -22,17 +22,27 @@ var pingpp = require('pingpp')('YOU-KEY');
 
 ```js
 pingpp.charges.create({
-  subject: "Charge Subject",
-  body: "Charge Body",
-  amount: 100,
-  order_no: "OrderNo",
-  channel: pingpp.channel.ALIPAY,
-  currency: "cny",
+  order_no:  "123456789",
+  app: {id:  "YOUR-APP-ID"},
+  channel:   pingpp.channel.ALIPAY,
+  amount:    100,
   client_ip: "127.0.0.1",
-  app: {id: "YOUR-APP-ID"}
+  currency:  "cny",
+  subject:   "Your Subject",
+  body:      "Your Body"
 }, function(err, charge) {
   // YOUR CODE
 });
 ```
 
 详细使用方法请参考 [技术文档](https://pingplusplus.com/document) 或者参考 [example](https://github.com/PingPlusPlus/pingpp-nodejs/tree/master/example) 文件夹里的示例。
+
+##更新日志
+
+###1.0.3
+* 更改：<br>
+cURL 使用 TLSv1.x
+
+###1.0.4
+* 更改：<br>
+移除旧的 refund 方法

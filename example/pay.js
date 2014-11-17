@@ -5,16 +5,35 @@
  * 该代码仅供学习和研究 Ping++ SDK 使用，只是提供一个参考。
  */
 var pingpp = require('pingpp')('YOUR-KEY');
-
+var channel = pingpp.channel.ALIPAY;
+var extra = {};
+switch (channel) {
+  case pingpp.channel.ALIPAY_WAP:
+    extra = {
+      'success_url': 'http://www.yourdomain.com/success',
+      'cancel_url': 'http://www.yourdomain.com/cancel'
+    };
+    break;
+  case pingpp.channel.UPMP_WAP:
+    extra = {
+      'result_url': 'http://www.yourdomain.com/result?code='
+    };
+    break;
+}
+var crypto = require('crypto');
+var order_no = crypto.createHash('md5')
+              .update(new Date().getTime().toString())
+              .digest('hex').substr(0, 16);
 pingpp.charges.create({
-  subject: "Charge Subject",
-  body: "Charge Body",
-  amount: 100,
-  order_no: "OrderNo",
-  channel: pingpp.channel.ALIPAY,
-  currency: "cny",
+  order_no:  order_no,
+  app:       {id: "YOUR-APP-ID"},
+  channel:   channel,
+  amount:    100,
   client_ip: "127.0.0.1",
-  app: {id: "YOUR-APP-ID"}
+  currency:  "cny",
+  subject:   "Your Subject",
+  body:      "Your Body",
+  extra:     extra
 }, function(err, charge) {
   // YOUR CODE
 });

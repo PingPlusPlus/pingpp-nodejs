@@ -1,6 +1,6 @@
 {
   "name": "pingpp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Pingplusplus API wrapper",
   "homepage": "https://github.com/PingPlusPlus/pingpp-nodejs",
   "author": "Pingpp <xufeng.weng@pingplusplus.com> (https://pingplusplus.com/)",
