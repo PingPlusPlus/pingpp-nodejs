@@ -16,7 +16,7 @@ example 文件夹里面是一个简单的接入示例，该示例仅供参考。
 初始化 pingpp 实例：
 
 ```js
-var pingpp = require('pingpp')('YOU-KEY');
+var pingpp = require('pingpp')('YOUR-KEY');
 ```
 发起支付请求示例：
 
