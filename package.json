@@ -3,9 +3,9 @@
   "version": "1.0.4",
   "description": "Pingplusplus API wrapper",
   "homepage": "https://github.com/PingPlusPlus/pingpp-nodejs",
-  "author": "Pingpp <xufeng.weng@pingplusplus.com> (https://pingplusplus.com/)",
+  "author": "Pingpp <xufeng.weng@pingxx.com> (https://pingxx.com/)",
   "contributors": [
-    "Xufeng Weng <xufeng.weng@pingplusplus.com>"
+    "Xufeng Weng <xufeng.weng@pingxx.com>"
   ],
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
     "mocha-as-promised": "~1.4.0"
   },
   "dependencies": {
-    "when": "~3.1.0"
+    "when": "~3.1.0",
+    "qs": "^2.3.3",
+    "lodash": "^2.4.1"
   },
   "scripts": {
     "test": "mocha"

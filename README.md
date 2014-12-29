@@ -35,7 +35,7 @@ pingpp.charges.create({
 });
 ```
 
-详细使用方法请参考 [技术文档](https://pingplusplus.com/document) 或者参考 [example](https://github.com/PingPlusPlus/pingpp-nodejs/tree/master/example) 文件夹里的示例。
+详细使用方法请参考 [技术文档](https://pingxx.com/document) 或者参考 [example](https://github.com/PingPlusPlus/pingpp-nodejs/tree/master/example) 文件夹里的示例。
 
 ##更新日志
 
