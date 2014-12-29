@@ -39,6 +39,10 @@ pingpp.charges.create({
 
 ##更新日志
 
+### 2.0.0
+* 更改：<br>
+添加新渠道：百付宝、百付宝WAP、微信公众号
+
 ###1.0.3
 * 更改：<br>
 cURL 使用 TLSv1.x
