@@ -17,7 +17,7 @@ nodejs 版本 v0.8.0 及以上
 ## 接入方法
 关于如何使用 SDK 请参考 [技术文档](https://pingxx.com/document) 或者参考 [example](https://github.com/PingPlusPlus/pingpp-nodejs/tree/master/example) 文件夹里的示例。
 
-##更新日志
+## 更新日志
 
 ### 2.0.0
 * 更改：<br>
