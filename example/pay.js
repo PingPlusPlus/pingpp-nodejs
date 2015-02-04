@@ -5,6 +5,7 @@
  * 该代码仅供学习和研究 Ping++ SDK 使用，只是提供一个参考。
  */
 var pingpp = require('pingpp')('YOUR-KEY');
+pingpp.parseHeaders(/*headers*/); // 把从客户端传上来的 Headers 传到这里
 var channel = pingpp.channel.ALIPAY;
 var extra = {};
 switch (channel) {

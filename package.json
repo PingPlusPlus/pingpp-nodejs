@@ -1,6 +1,6 @@
 {
   "name": "pingpp",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Pingplusplus API wrapper",
   "homepage": "https://github.com/PingPlusPlus/pingpp-nodejs",
   "author": "Pingpp <xufeng.weng@pingxx.com> (https://pingxx.com/)",
@@ -25,7 +25,7 @@
   "dependencies": {
     "when": "~3.1.0",
     "qs": "^2.3.3",
-    "lodash": "^2.4.1"
+    "lodash": "^3.1.0"
   },
   "scripts": {
     "test": "mocha"

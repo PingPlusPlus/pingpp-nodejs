@@ -54,6 +54,9 @@ var createPayment = function(channel, amount, client_ip, open_id, cb){
   }, cb);
 };
 http.createServer(function (req, res) {
+
+  pingpp.parseHeaders(req.headers); // 把从客户端传上来的 Headers 传到这里
+
   req.setEncoding('utf-8');
   var post_data = "";
   req.addListener("data", function (chunk) {
