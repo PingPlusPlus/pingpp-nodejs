@@ -5,17 +5,17 @@
  * 该代码仅供学习和研究 Ping++ SDK 使用，只是提供一个参考。
  */
 var pingpp = require('pingpp')('YOUR-KEY');
-pingpp.parseHeaders(/*headers*/); // 把从客户端传上来的 Headers 传到这里
-var channel = pingpp.channel.ALIPAY;
+// pingpp.parseHeaders(/*headers*/); // 把从客户端传上来的 Headers 传到这里
+var channel = 'alipay';
 var extra = {};
 switch (channel) {
-  case pingpp.channel.ALIPAY_WAP:
+  case 'alipay_wap':
     extra = {
       'success_url': 'http://www.yourdomain.com/success',
       'cancel_url': 'http://www.yourdomain.com/cancel'
     };
     break;
-  case pingpp.channel.UPMP_WAP:
+  case 'upacp_wap':
     extra = {
       'result_url': 'http://www.yourdomain.com/result?code='
     };

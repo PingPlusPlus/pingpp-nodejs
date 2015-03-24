@@ -12,25 +12,25 @@ var pingpp = require('pingpp')('YOUR-KEY');
 var createPayment = function(channel, amount, client_ip, open_id, cb){
   var extra = {};
   switch (channel) {
-    case pingpp.channel.ALIPAY_WAP:
+    case 'alipay_wap':
       extra = {
         'success_url': 'http://www.yourdomain.com/success',
         'cancel_url': 'http://www.yourdomain.com/cancel'
       };
       break;
-    case pingpp.channel.UPACP_WAP:
-    case pingpp.channel.UPMP_WAP:
+    case 'upacp_wap':
+    case 'upmp_wap':
       extra = {
         'result_url': 'http://www.yourdomain.com/result?code='
       };
       break;
-    case pingpp.channel.BFB_WAP:
+    case 'bfb_wap':
       extra = {
         'bfb_login': true,
         'result_url': 'http://www.yourdomain.com/success'
       };
       break;
-    case pingpp.channel.WX_PUB:
+    case 'wx_pub':
       extra = {
         'trade_type': 'JSAPI',
         'open_id': open_id
