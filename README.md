@@ -15,12 +15,12 @@ nodejs 版本 v0.8.0 及以上
 下载源码后，在目录下运行 `npm install`
 
 ### 初始化
-``` nodejs
+``` js
 var pingpp = require('pingpp')('YOUR-KEY');
 ```
 
 ### 支付
-``` nodejs
+``` js
 pingpp.charges.create({
   order_no:  "123456789",
   app:       { id: "YOUR-APP-ID" },
@@ -37,7 +37,7 @@ pingpp.charges.create({
 ```
 
 ### 查询
-``` nodejs
+``` js
 pingpp.charges.retrieve(
   "CHARGE-ID",
   function(err, charge) {
@@ -45,14 +45,14 @@ pingpp.charges.retrieve(
   }
 );
 ```
-``` nodejs
+``` js
 pingpp.charges.list({ limit: 5 }, function(err, charges) {
   // YOUR CODE
 });
 ```
 
 ### 退款
-``` nodejs
+``` js
 pingpp.charges.createRefund(
   "CHARGE-ID",
   { amount: 100, description: "Refund Description" },
@@ -63,7 +63,7 @@ pingpp.charges.createRefund(
 ```
 
 ### 退款查询
-``` nodejs
+``` js
  pingpp.charges.retrieveRefund(
     "CHARGE-ID",
     "REFUND-ID",
@@ -72,7 +72,7 @@ pingpp.charges.createRefund(
     }
   );
 ```
-``` nodejs
+``` js
 pingpp.charges.listRefunds(
     "CHARGE-ID",
     { limit: 5 },
@@ -83,7 +83,7 @@ pingpp.charges.listRefunds(
 ```
 
 ### 微信红包
-``` nodejs
+``` js
 pingpp.redEnvelopes.create({
   order_no:    "123456789",
   app:         { id: "YOUR-APP-ID" },
