@@ -1,25 +1,20 @@
 var pingpp = require('pingpp')('YOUR-KEY');
 
-var date = new Date();
-var month = date.getMonth() + 1;
-var formated_date = date.getFullYear() + (month < 10 ? "0" + month : month) + date.getDate();
-var mch_id = 'MERCHANT-ID';
-var order_no = mch_id + formated_date + "123";
 /* create a redEnvelope */
 pingpp.redEnvelopes.create({
-  order_no:  order_no,
-  app:       {id: "YOUR-APP-ID"},
-  channel:   "wx_pub",
-  amount:    100,
-  currency:  "cny",
-  recipient: "recipient openid",
-  subject:   "Your Subject",
-  body:      "Your Body",
-  description: "Description",
-  extra:     {
+  order_no:    "123456789",
+  app:         { id: "YOUR-APP-ID" },
+  channel:     "wx_pub",
+  amount:      100,
+  currency:    "cny",
+  subject:     "Your Subject",
+  body:        "Your Body",
+  extra: {
     nick_name: "Nick Name",
     send_name: "Send Name"
-  }
+  },
+  recipient:   "Openid",
+  description: "Your Description"
 }, function(err, redEnvelope) {
   // YOUR CODE
 });
@@ -35,7 +30,7 @@ pingpp.redEnvelopes.retrieve(
 /* list redEnvelopes */
 pingpp.redEnvelopes.list(
   { limit: 10 },
-  function(err, redEnvelope) {
+  function(err, redEnvelopes) {
     // YOUR CODE
   }
 );

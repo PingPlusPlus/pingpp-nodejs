@@ -14,28 +14,93 @@ nodejs 版本 v0.8.0 及以上
 或者<br>
 下载源码后，在目录下运行 `npm install`
 
-## 接入方法
-关于如何使用 SDK 请参考 [技术文档](https://pingxx.com/document) 或者参考 [example](https://github.com/PingPlusPlus/pingpp-nodejs/tree/master/example) 文件夹里的示例。
+### 初始化
+``` nodejs
+var pingpp = require('pingpp')('YOUR-KEY');
+```
 
-## 更新日志
-### 2.0.2
-* 新增：<br>
-新增微信红包
-* 更改：<br>
-移除 PingppChannel.js
+### 支付
+``` nodejs
+pingpp.charges.create({
+  order_no:  "123456789",
+  app:       { id: "YOUR-APP-ID" },
+  channel:   channel,
+  amount:    100,
+  client_ip: "127.0.0.1",
+  currency:  "cny",
+  subject:   "Your Subject",
+  body:      "Your Body",
+  extra:     extra
+}, function(err, charge) {
+  // YOUR CODE
+});
+```
 
-### 2.0.1
-* 更改：<br>
-传递客户端的请求头部到 API
+### 查询
+``` nodejs
+pingpp.charges.retrieve(
+  "CHARGE-ID",
+  function(err, charge) {
+    // YOUR CODE
+  }
+);
+```
+``` nodejs
+pingpp.charges.list({ limit: 5 }, function(err, charges) {
+  // YOUR CODE
+});
+```
 
-### 2.0.0
-* 更改：<br>
-添加新渠道：百付宝、百付宝WAP、微信公众号
+### 退款
+``` nodejs
+pingpp.charges.createRefund(
+  "CHARGE-ID",
+  { amount: 100, description: "Refund Description" },
+  function(err, refund) {
+    // YOUR CODE
+  }
+);
+```
 
-### 1.0.3
-* 更改：<br>
-cURL 使用 TLSv1.x
+### 退款查询
+``` nodejs
+ pingpp.charges.retrieveRefund(
+    "CHARGE-ID",
+    "REFUND-ID",
+    function(err, refund) {
+      // YOUR CODE
+    }
+  );
+```
+``` nodejs
+pingpp.charges.listRefunds(
+    "CHARGE-ID",
+    { limit: 5 },
+    function(err, refunds) {
+      // 异步调用
+    }
+  );
+```
 
-### 1.0.4
-* 更改：<br>
-移除旧的 refund 方法
+### 微信红包
+``` nodejs
+pingpp.redEnvelopes.create({
+  order_no:    "123456789",
+  app:         { id: "YOUR-APP-ID" },
+  channel:     "wx_pub",
+  amount:      100,
+  currency:    "cny",
+  subject:     "Your Subject",
+  body:        "Your Body",
+  extra: {
+    nick_name: "Nick Name",
+    send_name: "Send Name"
+  },
+  recipient:   "Openid",
+  description: "Your Description"
+}, function(err, redEnvelope) {
+  // YOUR CODE
+});
+```
+
+**详细信息请参考 [API 文档](https://pingxx.com/document/api?node.js)。**
