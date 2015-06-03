@@ -64,22 +64,22 @@ pingpp.charges.createRefund(
 
 ### 退款查询
 ``` js
- pingpp.charges.retrieveRefund(
-    "CHARGE_ID",
-    "REFUND_ID",
-    function(err, refund) {
-      // YOUR CODE
-    }
-  );
+pingpp.charges.retrieveRefund(
+  "CHARGE_ID",
+  "REFUND_ID",
+  function(err, refund) {
+    // YOUR CODE
+  }
+);
 ```
 ``` js
 pingpp.charges.listRefunds(
-    "CHARGE_ID",
-    { limit: 5 },
-    function(err, refunds) {
-      // 异步调用
-    }
-  );
+  "CHARGE_ID",
+  { limit: 5 },
+  function(err, refunds) {
+    // YOUR CODE
+  }
+);
 ```
 
 ### 微信红包
