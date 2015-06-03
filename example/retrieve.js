@@ -7,7 +7,7 @@
 var pingpp = require('pingpp')('YOUR-KEY');
 
 pingpp.charges.retrieve(
-  "CHARGE-ID",
+  "CHARGE_ID",
   function(err, charge) {
     // YOUR CODE
   }

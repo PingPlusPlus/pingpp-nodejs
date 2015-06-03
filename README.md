@@ -39,7 +39,7 @@ pingpp.charges.create({
 ### 查询
 ``` js
 pingpp.charges.retrieve(
-  "CHARGE-ID",
+  "CHARGE_ID",
   function(err, charge) {
     // YOUR CODE
   }
@@ -54,7 +54,7 @@ pingpp.charges.list({ limit: 5 }, function(err, charges) {
 ### 退款
 ``` js
 pingpp.charges.createRefund(
-  "CHARGE-ID",
+  "CHARGE_ID",
   { amount: 100, description: "Refund Description" },
   function(err, refund) {
     // YOUR CODE
@@ -65,8 +65,8 @@ pingpp.charges.createRefund(
 ### 退款查询
 ``` js
  pingpp.charges.retrieveRefund(
-    "CHARGE-ID",
-    "REFUND-ID",
+    "CHARGE_ID",
+    "REFUND_ID",
     function(err, refund) {
       // YOUR CODE
     }
@@ -74,7 +74,7 @@ pingpp.charges.createRefund(
 ```
 ``` js
 pingpp.charges.listRefunds(
-    "CHARGE-ID",
+    "CHARGE_ID",
     { limit: 5 },
     function(err, refunds) {
       // 异步调用
@@ -99,6 +99,21 @@ pingpp.redEnvelopes.create({
   recipient:   "Openid",
   description: "Your Description"
 }, function(err, redEnvelope) {
+  // YOUR CODE
+});
+```
+
+### Event 事件
+``` js
+pingpp.events.retrieve(
+  "EVENT_ID",
+  function(err, event) {
+    // YOUR CODE
+  }
+);
+```
+``` js
+pingpp.events.list({ limit: 5 }, function(err, events) {
   // YOUR CODE
 });
 ```

@@ -7,7 +7,7 @@
 var pingpp = require('pingpp')('YOUR-KEY');
 
 pingpp.charges.createRefund(
-  "CHARGE-ID",
+  "CHARGE_ID",
   { amount: 100, description: "Refund Description" },
   function(err, refund) {
     // YOUR CODE
