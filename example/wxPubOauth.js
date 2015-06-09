@@ -20,6 +20,15 @@ http.createServer(function (req, res) {
         // ...
       });
       break;
+    case "/signature": // 微信公众号获取签名
+      pingpp.wxPubOauth.getJsapiTicket('WX-PUB-APP-ID', 'WX-PUB-APP-SECRET', function(e, response){
+        // response['ticket'] 是获得的 jsapi_ticket，有效期为 7200 秒，需在自己的服务器全局缓存。
+        var charge = {/* 准备支付的 charge */};
+        var signature = pingpp.wxPubOauth.getSignature(charge, response['ticket'], 'PAY-PAGE-URL');
+        res.writeHead(200);
+        res.end(signature);
+      });
+      break;
     default:
       res.writeHead(404);
       res.end('');
