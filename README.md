@@ -23,7 +23,7 @@ var pingpp = require('pingpp')('YOUR-KEY');
 ``` js
 pingpp.charges.create({
   order_no:  "123456789",
-  app:       { id: "YOUR-APP-ID" },
+  app:       { id: "APP_ID" },
   channel:   channel,
   amount:    100,
   client_ip: "127.0.0.1",
@@ -46,9 +46,12 @@ pingpp.charges.retrieve(
 );
 ```
 ``` js
-pingpp.charges.list({ limit: 5 }, function(err, charges) {
-  // YOUR CODE
-});
+pingpp.charges.list(
+  { limit: 5 },
+  function(err, charges) {
+    // YOUR CODE
+  }
+);
 ```
 
 ### 退款
@@ -82,11 +85,11 @@ pingpp.charges.listRefunds(
 );
 ```
 
-### 微信红包
+### 红包
 ``` js
 pingpp.redEnvelopes.create({
   order_no:    "123456789",
-  app:         { id: "YOUR-APP-ID" },
+  app:         { id: "APP_ID" },
   channel:     "wx_pub",
   amount:      100,
   currency:    "cny",
@@ -131,9 +134,45 @@ pingpp.events.retrieve(
 );
 ```
 ``` js
-pingpp.events.list({ limit: 5 }, function(err, events) {
+pingpp.events.list(
+  { limit: 5 },
+  function(err, events) {
+    // YOUR CODE
+  }
+);
+```
+
+### 企业付款
+``` js
+pingpp.transfers.create({
+  order_no:    "123456789",
+  app:         { id: "APP_ID" },
+  channel:     "wx_pub",
+  amount:      100,
+  currency:    "cny",
+  type:        "b2c",
+  recipient:   "Openid",
+  description: "Your Description"
+}, function(err, transfer) {
   // YOUR CODE
 });
+```
+### 企业付款查询
+``` js
+pingpp.transfers.retrieve(
+  "TRANSFER_ID",
+  function(err, transfer) {
+    // YOUR CODE
+  }
+);
+```
+``` js
+pingpp.transfers.list(
+  { limit: 5 },
+  function(err, transfers) {
+    // YOUR CODE
+  }
+);
 ```
 
 **详细信息请参考 [API 文档](https://pingxx.com/document/api?node.js)。**

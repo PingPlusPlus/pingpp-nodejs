@@ -43,7 +43,7 @@ var createPayment = function(channel, amount, client_ip, open_id, cb){
                 .digest('hex').substr(0, 12);
   pingpp.charges.create({
     order_no:  order_no,
-    app:       {id: "YOUR-APP-ID"},
+    app:       {id: "APP_ID"},
     channel:   channel,
     amount:    amount,
     client_ip: client_ip,

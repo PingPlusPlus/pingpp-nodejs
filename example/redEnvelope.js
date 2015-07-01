@@ -3,7 +3,7 @@ var pingpp = require('pingpp')('YOUR-KEY');
 /* create a redEnvelope */
 pingpp.redEnvelopes.create({
   order_no:    "123456789",
-  app:         { id: "YOUR-APP-ID" },
+  app:         { id: "APP_ID" },
   channel:     "wx_pub",
   amount:      100,
   currency:    "cny",
@@ -21,7 +21,7 @@ pingpp.redEnvelopes.create({
 
 /* retrieve a redEnvelope */
 pingpp.redEnvelopes.retrieve(
-  "RED-ENVELOPE-ID",
+  "RED_ID",
   function(err, redEnvelope) {
     // YOUR CODE
   }

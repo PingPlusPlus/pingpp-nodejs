@@ -27,7 +27,7 @@ var order_no = crypto.createHash('md5')
               .digest('hex').substr(0, 16);
 pingpp.charges.create({
   order_no:  order_no,
-  app:       { id: "YOUR-APP-ID" },
+  app:       { id: "APP_ID" },
   channel:   channel,
   amount:    100,
   client_ip: "127.0.0.1",
