@@ -1,13 +1,10 @@
-/**
- * Ping++ Server SDK
- * 说明：
- * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己的需要，按照技术文档编写。
- * 该代码仅供学习和研究 Ping++ SDK 使用，只是提供一个参考。
- */
-var pingpp = require('pingpp')('YOUR-KEY');
+// 配置 API Key 和 App ID
+// 从 Ping++ 管理平台应用信息里获取
+var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC" // 这里填入你的 Test/Live Key
+var pingpp = require('pingpp')(API_KEY);
 
 pingpp.charges.retrieve(
-  "CHARGE_ID",
+  "ch_bLWP80Ci9S4ODaXLSKLOGe5S",
   function(err, charge) {
     // YOUR CODE
   }

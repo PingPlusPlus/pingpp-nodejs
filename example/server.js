@@ -1,13 +1,13 @@
-/**
- * Ping++ Server SDK
- * 说明：
- * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己的需要，按照技术文档编写。
- */
 'use strict';
+// 配置 API Key 和 App ID
+// 从 Ping++ 管理平台应用信息里获取
+var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC" // 这里填入你的 Test/Live Key
+var APP_ID = "app_1Gqj58ynP0mHeX1q" // 这里填入你的应用 ID
+
 var http = require('http');
 var url = require('url');
 var crypto = require('crypto');
-var pingpp = require('pingpp')('YOUR-KEY');
+var pingpp = require('pingpp')(API_KEY);
 
 var createPayment = function(channel, amount, client_ip, open_id, cb){
   var extra = {};
@@ -19,6 +19,10 @@ var createPayment = function(channel, amount, client_ip, open_id, cb){
       };
       break;
     case 'upacp_wap':
+      extra = {
+        'result_url': 'http://www.yourdomain.com/result'
+      };
+      break;
     case 'upmp_wap':
       extra = {
         'result_url': 'http://www.yourdomain.com/result?code='
@@ -32,7 +36,6 @@ var createPayment = function(channel, amount, client_ip, open_id, cb){
       break;
     case 'wx_pub':
       extra = {
-        'trade_type': 'JSAPI',
         'open_id': open_id
       };
       break;
@@ -43,7 +46,7 @@ var createPayment = function(channel, amount, client_ip, open_id, cb){
                 .digest('hex').substr(0, 12);
   pingpp.charges.create({
     order_no:  order_no,
-    app:       {id: "APP_ID"},
+    app:       {id: APP_ID},
     channel:   channel,
     amount:    amount,
     client_ip: client_ip,

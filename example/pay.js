@@ -1,12 +1,11 @@
-/**
- * Ping++ Server SDK
- * 说明：
- * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己的需要，按照技术文档编写。
- * 该代码仅供学习和研究 Ping++ SDK 使用，只是提供一个参考。
- */
-var pingpp = require('pingpp')('YOUR-KEY');
+// 配置 API Key 和 App ID
+// 从 Ping++ 管理平台应用信息里获取
+var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC" // 这里填入你的 Test/Live Key
+var APP_ID = "app_1Gqj58ynP0mHeX1q" // 这里填入你的应用 ID
+
+var pingpp = require('pingpp')(API_KEY);
 // pingpp.parseHeaders(/*headers*/); // 把从客户端传上来的 Headers 传到这里
-var channel = 'alipay';
+var channel = 'alipay'; // 选择渠道
 var extra = {};
 switch (channel) {
   case 'alipay_wap':
@@ -17,7 +16,7 @@ switch (channel) {
     break;
   case 'upacp_wap':
     extra = {
-      'result_url': 'http://www.yourdomain.com/result?code='
+      'result_url': 'http://www.yourdomain.com/result'
     };
     break;
 }
@@ -27,7 +26,7 @@ var order_no = crypto.createHash('md5')
               .digest('hex').substr(0, 16);
 pingpp.charges.create({
   order_no:  order_no,
-  app:       { id: "APP_ID" },
+  app:       { id: APP_ID },
   channel:   channel,
   amount:    100,
   client_ip: "127.0.0.1",
