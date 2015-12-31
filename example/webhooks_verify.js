@@ -14,7 +14,7 @@ var raw_data = '{"id":"evt_eYa58Wd44Glerl8AgfYfd1sL","created":1434368075,"livem
 // 签名在头部信息的 x-pingplusplus-signature 字段
 var signature = 'BX5sToHUzPSJvAfXqhtJicsuPjt3yvq804PguzLnMruCSvZ4C7xYS4trdg1blJPh26eeK/P2QfCCHpWKedsRS3bPKkjAvugnMKs+3Zs1k+PshAiZsET4sWPGNnf1E89Kh7/2XMa1mgbXtHt7zPNC4kamTqUL/QmEVI8LJNq7C9P3LR03kK2szJDhPzkWPgRyY2YpD2eq1aCJm0bkX9mBWTZdSYFhKt3vuM1Qjp5PWXk0tN5h9dNFqpisihK7XboB81poER2SmnZ8PIslzWu2iULM7VWxmEDA70JKBJFweqLCFBHRszA8Nt3AXF0z5qe61oH1oSUmtPwNhdQQ2G5X3g==';
 // 请从 https://dashboard.pingxx.com 获取「Webhooks 验证 Ping++ 公钥」
-var pub_key_path = __dirname + "/rsa_public_key.pem";
+var pub_key_path = __dirname + "/pingpp_rsa_public_key.pem";
 
 if (verify_signature(raw_data, signature, pub_key_path)) {
   console.log('verification succeeded');

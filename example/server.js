@@ -10,6 +10,7 @@ var crypto = require('crypto');
 var pingpp = require('pingpp')(API_KEY);
 
 var createPayment = function(channel, amount, client_ip, open_id, cb){
+  // 以下 channel 仅为部分需要 extra 参数的示例，详见 https://www.pingxx.com/document/api#api-c-new
   var extra = {};
   switch (channel) {
     case 'alipay_wap':
@@ -60,6 +61,9 @@ http.createServer(function (req, res) {
 
   pingpp.parseHeaders(req.headers); // 把从客户端传上来的 Headers 传到这里
 
+  // 设置你的私钥路径，用于请求的签名，对应的公钥请填写到 Ping++ 管理平台
+  pingpp.setPrivateKeyPath(__dirname + "/your_rsa_private_key.pem");
+
   req.setEncoding('utf-8');
   var post_data = "";
   req.addListener("data", function (chunk) {
@@ -96,27 +100,7 @@ http.createServer(function (req, res) {
           return resp({error:err.raw});
         });
         break;
-      case "/notify":
-        // 异步通知
-        var notify;
-        try {
-          notify = JSON.parse(post_data);
-        } catch (err) {
-          return resp('fail');
-        }
-        if (notify.object === undefined) {
-          return resp('fail');
-        }
-        switch (notify.object) {
-          case "charge":
-            // 开发者在此处加入对支付异步通知的处理代码
-            return resp("success");
-          case "refund":
-            // 开发者在此处加入对退款异步通知的处理代码
-            return resp("success");
-          default:
-            return resp("fail");
-        }
+
       default:
         resp("", 404);
         break;
