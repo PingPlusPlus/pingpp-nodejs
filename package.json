@@ -13,18 +13,17 @@
   },
   "bugs:": "https://github.com/PingPlusPlus/pingpp-nodejs/issues",
   "engines": {
-    "node": ">= v0.8.0"
+    "node": ">= v0.10.0"
   },
   "main": "lib/pingpp.js",
   "devDependencies": {
-    "mocha": "~1.13.0",
+    "mocha": "~2.1.0",
     "chai": "~1.8.0",
-    "chai-as-promised": "~4.0.0",
-    "mocha-as-promised": "~1.4.0"
+    "chai-as-promised": "~4.0.0"
   },
   "dependencies": {
     "when": "~3.1.0",
-    "qs": "^2.3.3",
+    "qs": "^2.4.1",
     "lodash": "^3.1.0"
   },
   "scripts": {
