@@ -3,20 +3,31 @@ Pingpp Node.js SDK
 ****
 
 ## 简介
-lib 文件夹下是 Node.js SDK 文件，<br>
+lib 文件夹下是 Node.js SDK 文件，  
 example 文件夹里面是一个简单的接入示例，该示例仅供参考。
 
 ## 版本要求
 nodejs 版本 v0.8.0 及以上
 
 ## 安装
-`npm install pingpp`<br>
-或者<br>
+`npm install pingpp`  
+或者  
 下载源码后，在目录下运行 `npm install`
 
 ### 初始化
 ``` js
 var pingpp = require('pingpp')('YOUR-KEY');
+```
+
+### 设置请求签名密钥
+密钥需要你自己生成，公钥请填写到 [Ping++ Dashboard](https://dashboard.pingxx.com)  
+设置你的私钥路径
+``` js
+pingpp.setPrivateKeyPath("/path/to/your_rsa_private_key.pem");
+```
+也可以设置私钥内容
+``` js
+pingpp.setPrivateKey("你的 RSA 私钥内容字符串");
 ```
 
 ### 支付
