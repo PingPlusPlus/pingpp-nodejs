@@ -5,6 +5,16 @@ var APP_ID = "app_1Gqj58ynP0mHeX1q" // 这里填入你的应用 ID
 
 var pingpp = require('pingpp')(API_KEY);
 // pingpp.parseHeaders(/*headers*/); // 把从客户端传上来的 Headers 传到这里
+
+// 设置请求签名私钥路径
+pingpp.setPrivateKeyPath(__dirname + '/your_rsa_private_key.pem');
+// 或者设置请求签名私钥内容，请保留换行符 "\n"
+// pingpp.setPrivateKey('-----BEGIN RSA PRIVATE KEY-----\n\
+// ......\n\
+// ... 私钥内容 ...\n\
+// ......\n\
+// -----END RSA PRIVATE KEY-----');
+
 var channel = 'alipay'; // 选择渠道
 var extra = {};
 switch (channel) {
@@ -19,6 +29,7 @@ switch (channel) {
       'result_url': 'http://www.yourdomain.com/result'
     };
     break;
+  // 请根据 API 文档说明，根据不同渠道，添加不同的 extra 参数。
 }
 var crypto = require('crypto');
 var order_no = crypto.createHash('md5')
@@ -36,4 +47,6 @@ pingpp.charges.create({
   extra:     extra
 }, function(err, charge) {
   // YOUR CODE
+  console.log(err);
+  console.log(charge);
 });
