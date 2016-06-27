@@ -1,7 +1,6 @@
 'use strict';
-// 配置 API Key 和 App ID
-// 从 Ping++ 管理平台应用信息里获取
-var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC" // 这里填入你的 Test/Live Key
+// api_key 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击管理平台右上角公司名称->开发信息-> Secret Key
+var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC"
 
 var http = require('http');
 var _url = require('url');
