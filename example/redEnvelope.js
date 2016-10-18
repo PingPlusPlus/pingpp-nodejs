@@ -9,7 +9,7 @@ var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC"
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = "app_1Gqj58ynP0mHeX1q"
 // 设置 api_key
-var pingpp = require('pingpp')(API_KEY);
+var pingpp = require('../lib/pingpp')(API_KEY);
 
 /* create a redEnvelope */
 pingpp.redEnvelopes.create({
@@ -33,6 +33,9 @@ pingpp.redEnvelopes.create({
 pingpp.redEnvelopes.retrieve(
   "red_Py9WTCL8GKe1n54KG0Km1av1",// 通过 Red_envelope 对象的 id 查询一个已创建的 Red_envelope 对象
   function(err, redEnvelope) {
+    if (err!=null){
+      console.log("pingpp.redEnvelopes.retrieve fail:",err)
+    }
     // YOUR CODE
   }
 );
@@ -41,6 +44,9 @@ pingpp.redEnvelopes.retrieve(
 pingpp.redEnvelopes.list(
   { limit: 10 },
   function(err, redEnvelopes) {
+    if (err!=null){
+      console.log("pingpp.redEnvelopes.list fail:",err)
+    }
     // YOUR CODE
   }
 );

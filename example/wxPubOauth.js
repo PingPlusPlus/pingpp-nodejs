@@ -4,7 +4,7 @@ var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC"
 
 var http = require('http');
 var _url = require('url');
-var pingpp = require('pingpp')(API_KEY);
+var pingpp = require('../lib/pingpp')(API_KEY);
 http.createServer(function (req, res) {
   var urlParts = _url.parse(req.url, true);
   switch (urlParts.pathname) {

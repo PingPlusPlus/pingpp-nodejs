@@ -8,7 +8,7 @@ var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC"
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = "app_1Gqj58ynP0mHeX1q"
 // 设置 api_key
-var pingpp = require('pingpp')(API_KEY);
+var pingpp = require('../lib/pingpp')(API_KEY);
 
 // 设置请求签名私钥路径（该接口必须添加签名，请在 dashboard 填写公钥）
 pingpp.setPrivateKeyPath(__dirname + '/your_rsa_private_key.pem');
@@ -31,8 +31,9 @@ pingpp.identification.identify(
     }
   },
   function(err, result) {
-    err && console.log(err.message);
-    result && console.log(result);
+    if (err!=null){
+      console.log("pingpp.identification.identify fail:",err)
+    }
     // YOUR CODE
   }
 );

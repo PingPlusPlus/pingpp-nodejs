@@ -9,7 +9,7 @@ var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC"
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = "app_1Gqj58ynP0mHeX1q"
 // 设置 api_key
-var pingpp = require('pingpp')(API_KEY);
+var pingpp = require('../lib/pingpp')(API_KEY);
 
 /* 企业付款 */
 pingpp.transfers.create({
@@ -22,6 +22,9 @@ pingpp.transfers.create({
   recipient:   "Openid",// 接收者 id， 为用户在 wx(新渠道)、wx_pub 下的 open_id
   description: "Your Description"
 }, function(err, transfer) {
+  if (err!=null){
+    console.log("pingpp.transfers.create fail:",err)
+  }
   // YOUR CODE
 });
 
@@ -30,6 +33,9 @@ pingpp.transfers.retrieve(
   // 通过 Transfer 对象的 id 查询一个已创建的 Transfer 对象
   "tr_Hm5uDSH8qP8OvbrT0GfDOerP",
   function(err, transfer) {
+    if (err!=null){
+      console.log("pingpp.transfers.retrieve fail:",err)
+    }
     // YOUR CODE
   }
 );
@@ -38,6 +44,9 @@ pingpp.transfers.retrieve(
 pingpp.transfers.list(
   { limit: 5 },
   function(err, transfers) {
+    if (err!=null){
+      console.log("pingpp.transfers.list fail:",err)
+    }
     // YOUR CODE
   }
 );

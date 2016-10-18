@@ -9,7 +9,7 @@ var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC"
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = "app_1Gqj58ynP0mHeX1q"
 // 设置 api_key
-var pingpp = require('pingpp')(API_KEY);
+var pingpp = require('../lib/pingpp')(API_KEY);
 // pingpp.parseHeaders(/*headers*/); // 把从客户端传上来的 Headers 传到这里
 
 // 设置请求签名密钥，密钥对需要你自己用 openssl 工具生成，如何生成可以参考帮助中心：https://help.pingxx.com/article/123161；
@@ -47,6 +47,7 @@ var crypto = require('crypto');
 var order_no = crypto.createHash('md5')
               .update(new Date().getTime().toString())
               .digest('hex').substr(0, 16);
+
 pingpp.charges.create({
   order_no:  order_no,// 推荐使用 8-20 位，要求数字或字母，不允许其他字符
   app:       { id: APP_ID },
@@ -58,7 +59,8 @@ pingpp.charges.create({
   body:      "Your Body",
   extra:     extra
 }, function(err, charge) {
+  if (err!=null){
+    console.log("pingpp.charges.create fail:",err)
+  }
   // YOUR CODE
-  console.log(err);
-  console.log(charge);// 输出 Ping++ 返回的支付凭据 Charge
 });

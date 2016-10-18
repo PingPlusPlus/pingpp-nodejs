@@ -15,7 +15,7 @@ pingpp.setPrivateKeyPath(__dirname + '/your_rsa_private_key.pem');
 
 /* 企业付款 */
 pingpp.batchTransfers.create({
-  "app": { id: APP_ID },
+  "app": APP_ID ,
   "batch_no": new Date().getTime().toString(), // 批量付款批次号
   "channel": "alipay", // 目前只支持 alipay
   "amount": 8000, // 批量付款总金额
@@ -34,24 +34,30 @@ pingpp.batchTransfers.create({
   ], 
   "type": "b2c" // 付款类型，当前仅支持 b2c 企业付款
 }, function(err, transfer) {
-  console.log(err);
-  console.log(transfer);
-  // YOUR CODE
+  if (err!=null){
+    console.log("pingpp.batchTransfers.create fail:",err)
+  }
 });
 
 /* 查询 */
 pingpp.batchTransfers.retrieve(
   // 通过 Transfer 对象的 id 查询一个已创建的 Transfer 对象
-  "1818282929292221323",
+  "181610181347533047",
   function(err, transfer) {
+    if (err!=null){
+      console.log("pingpp.batchTransfers.retrieve fail:",err)
+    }
     // YOUR CODE
   }
 );
 
 /* 查询列表 */
 pingpp.batchTransfers.list(
-  { limit: 5 },
+  {page: 1},
   function(err, transfers) {
+    if (err!=null){
+      console.log("pingpp.batchTransfers.list fail:",err)
+    }
     // YOUR CODE
   }
 );

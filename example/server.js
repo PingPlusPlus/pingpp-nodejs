@@ -13,7 +13,7 @@ var APP_ID = "app_1Gqj58ynP0mHeX1q"
 var http = require('http');
 var url = require('url');
 var crypto = require('crypto');
-var pingpp = require('pingpp')(API_KEY);
+var pingpp = require('../lib/pingpp')(API_KEY);
 
 var createPayment = function(channel, amount, client_ip, open_id, cb){
   // 以下 channel 仅为部分需要 extra 参数的示例，详见 https://www.pingxx.com/document/api#api-c-new
