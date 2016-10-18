@@ -37,6 +37,7 @@ pingpp.batchTransfers.create({
   if (err!=null){
     console.log("pingpp.batchTransfers.create fail:",err)
   }
+  // YOUR CODE
 });
 
 /* 查询 */
