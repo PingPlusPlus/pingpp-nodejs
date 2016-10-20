@@ -168,6 +168,40 @@ pingpp.transfers.create({
   // YOUR CODE
 });
 ```
+
+### 企业付款取消
+``` js
+/* 企业付款取消 */
+pingpp.transfers.create({
+  order_no:    "123456789",
+  app:         { id: "APP_ID" },
+  channel:     "unionpay",// 目前支持 wx(新渠道)、 wx_pub、 unionpay
+  amount:      100,// 订单总金额, 人民币单位：分（如订单总金额为 1 元，此处请填 100,企业付款最小发送金额为 1 元）
+  currency:    "cny",
+  type:        "b2c",// 付款类型，当前仅支持 b2c 企业付款
+  description: "Your Description",
+  extra: {
+    "user_name": "User Name",
+    "card_number":"111111",
+    "open_bank_code":"0100"
+  }
+}, function(err, transfer) {
+  if (err!=null){
+    console.log("pingpp.transfers.create(unionpay) fail:",err)
+    return 
+  }
+  pingpp.transfers.cancel(
+    transfer.id,
+    function(err, transfers) {
+      if (err!=null){
+        console.log("pingpp.transfers.cancel fail:",err)
+      }
+      // YOUR CODE
+    }
+  );
+});
+```
+
 ### 企业付款查询
 ``` js
 pingpp.transfers.retrieve(
