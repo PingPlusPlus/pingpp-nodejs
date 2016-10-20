@@ -73,7 +73,7 @@ pingpp.transfers.create({
   }
   pingpp.transfers.cancel(
     transfer.id,
-    function(err, transfers) {
+    function(err, transfer) {
       if (err!=null){
         console.log("pingpp.transfers.cancel fail:",err)
       }
