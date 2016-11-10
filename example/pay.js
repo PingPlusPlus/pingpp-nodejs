@@ -59,8 +59,8 @@ pingpp.charges.create({
   body:      "Your Body",
   extra:     extra
 }, function(err, charge) {
-  if (err!=null){
-    console.log("pingpp.charges.create fail:",err)
+  if (err != null) {
+    console.log("pingpp.charges.create fail:", err);
   }
   // YOUR CODE
 });

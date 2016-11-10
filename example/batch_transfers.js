@@ -31,7 +31,7 @@ pingpp.batchTransfers.create({
       "amount": 3000, // 付款金额
       "name": "伢子" // 接收者姓名
     }
-  ], 
+  ],
   "type": "b2c" // 付款类型，当前仅支持 b2c 企业付款
 }, function(err, transfer) {
   if (err!=null){
@@ -45,8 +45,8 @@ pingpp.batchTransfers.retrieve(
   // 通过 Transfer 对象的 id 查询一个已创建的 Transfer 对象
   "181610181347533047",
   function(err, transfer) {
-    if (err!=null){
-      console.log("pingpp.batchTransfers.retrieve fail:",err)
+    if (err != null) {
+      console.log("pingpp.batchTransfers.retrieve fail:", err);
     }
     // YOUR CODE
   }
@@ -54,10 +54,10 @@ pingpp.batchTransfers.retrieve(
 
 /* 查询列表 */
 pingpp.batchTransfers.list(
-  {page: 1},
+  { page: 1, per_page: 3 },
   function(err, transfers) {
-    if (err!=null){
-      console.log("pingpp.batchTransfers.list fail:",err)
+    if (err != null) {
+      console.log("pingpp.batchTransfers.list fail:", err);
     }
     // YOUR CODE
   }

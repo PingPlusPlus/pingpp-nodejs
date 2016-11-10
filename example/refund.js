@@ -15,8 +15,8 @@ pingpp.charges.createRefund(
   // amount 为退款的金额, 单位为对应币种的最小货币单位，例如：人民币为分（如退款金额为 1 元，此处请填 100）。必须小于等于可退款金额，默认为全额退款
   { amount: 1, description: "Refund Description" },
   function(err, refund) {
-    if (err!=null){
-      console.log("pingpp.charges.createRefund fail:",err)
+    if (err != null) {
+      console.log("pingpp.charges.createRefund fail:", err);
     }
     // YOUR CODE
   }

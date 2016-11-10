@@ -23,8 +23,8 @@ pingpp.transfers.create({
   recipient:   "Openid",// 接收者 id， 为用户在 wx(新渠道)、wx_pub 下的 open_id
   description: "Your Description"
 }, function(err, transfer) {
-  if (err!=null){
-    console.log("pingpp.transfers.create fail:",err)
+  if (err != null) {
+    console.log("pingpp.transfers.create fail:", err);
   }
   // YOUR CODE
 });
@@ -34,8 +34,8 @@ pingpp.transfers.retrieve(
   // 通过 Transfer 对象的 id 查询一个已创建的 Transfer 对象
   "tr_Hm5uDSH8qP8OvbrT0GfDOerP",
   function(err, transfer) {
-    if (err!=null){
-      console.log("pingpp.transfers.retrieve fail:",err)
+    if (err != null) {
+      console.log("pingpp.transfers.retrieve fail:", err);
     }
     // YOUR CODE
   }
@@ -45,8 +45,8 @@ pingpp.transfers.retrieve(
 pingpp.transfers.list(
   { limit: 5 },
   function(err, transfers) {
-    if (err!=null){
-      console.log("pingpp.transfers.list fail:",err)
+    if (err != null) {
+      console.log("pingpp.transfers.list fail:", err);
     }
     // YOUR CODE
   }
@@ -67,15 +67,15 @@ pingpp.transfers.create({
     "open_bank_code":"0100"
   }
 }, function(err, transfer) {
-  if (err!=null){
-    console.log("pingpp.transfers.create(unionpay) fail:",err)
-    return 
+  if (err != null) {
+    console.log("pingpp.transfers.create(unionpay) fail:", err);
+    return
   }
   pingpp.transfers.cancel(
     transfer.id,
     function(err, transfer) {
-      if (err!=null){
-        console.log("pingpp.transfers.cancel fail:",err)
+      if (err != null) {
+        console.log("pingpp.transfers.cancel fail:", err);
       }
       // YOUR CODE
     }

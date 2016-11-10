@@ -33,8 +33,8 @@ pingpp.redEnvelopes.create({
 pingpp.redEnvelopes.retrieve(
   "red_Py9WTCL8GKe1n54KG0Km1av1",// 通过 Red_envelope 对象的 id 查询一个已创建的 Red_envelope 对象
   function(err, redEnvelope) {
-    if (err!=null){
-      console.log("pingpp.redEnvelopes.retrieve fail:",err)
+    if (err != null) {
+      console.log("pingpp.redEnvelopes.retrieve fail:", err);
     }
     // YOUR CODE
   }
@@ -44,8 +44,8 @@ pingpp.redEnvelopes.retrieve(
 pingpp.redEnvelopes.list(
   { limit: 10 },
   function(err, redEnvelopes) {
-    if (err!=null){
-      console.log("pingpp.redEnvelopes.list fail:",err)
+    if (err != null) {
+      console.log("pingpp.redEnvelopes.list fail:", err);
     }
     // YOUR CODE
   }

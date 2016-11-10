@@ -31,8 +31,8 @@ pingpp.identification.identify(
     }
   },
   function(err, result) {
-    if (err!=null){
-      console.log("pingpp.identification.identify fail:",err)
+    if (err != null) {
+      console.log("pingpp.identification.identify fail:", err);
     }
     // YOUR CODE
   }

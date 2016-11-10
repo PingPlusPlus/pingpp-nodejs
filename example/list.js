@@ -3,9 +3,9 @@ var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC"
 // 设置 api_key
 var pingpp = require('../lib/pingpp')(API_KEY);
 
-pingpp.charges.list({ limit: 10 }, function(err, charges) {
-  if (err!=null){
-    console.log("pingpp.charges.list fail:",err)
+pingpp.charges.list({ limit: 3 }, function(err, charges) {
+  if (err != null) {
+    console.log("pingpp.charges.list fail:", err);
   }
   // YOUR CODE
 });

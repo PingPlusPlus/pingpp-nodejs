@@ -7,8 +7,8 @@ var pingpp = require('../lib/pingpp')(API_KEY);
 pingpp.events.retrieve(
   'evt_VzWdLFbm5D6OdOuzQv7oqF0X',
   function(err, event) {
-    if (err!=null){
-      console.log("pingpp.events.retrieve fail:",err)
+    if (err != null) {
+      console.log("pingpp.events.retrieve fail:", err);
     }
     // YOUR CODE
   }
@@ -18,8 +18,8 @@ pingpp.events.retrieve(
 pingpp.events.list(
   { limit: 3 },
   function(err, events) {
-    if (err!=null){
-      console.log("pingpp.events.list fail:",err)
+    if (err != null) {
+      console.log("pingpp.events.list fail:", err);
     }
     // YOUR CODE
   }
