@@ -5,7 +5,6 @@ var APP_ID = 'app_1Gqj58ynP0mHeX1q';
 // 设置 api_key
 var pingpp = require('../lib/pingpp')(API_KEY);
 pingpp.setPrivateKeyPath(__dirname + '/your_rsa_private_key.pem');
-pingpp.setHost('apidev.afon.ninja');
 
 var channel = 'allinpay';
 
