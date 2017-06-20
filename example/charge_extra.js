@@ -181,7 +181,54 @@ var channelExtraMap = {
     'mobile': '13523456789'
   },
 
-  cp_b2b: {}
+  cp_b2b: {},
+
+  isv_scan: {
+    // 必须，终端号，1~8 位英文或数字，要求不同终端此号码不一样，会显示在对账单中。
+    'terminal_id': 'A0000007',
+
+    // 必须，客户端软件中展示的条码值，扫码设备扫描获取。1~32 位字符串。
+    'scan_code': '280614577834623988',
+
+    // 可选，商品列表，上送格式参照下面示例。
+    'goods_list': [
+      {
+        'goods_id': 'iphone6s16G', // 商户定义商品编号（一般为商品条码）。
+        'unified_goods_id': '1001', // 统一商品编号，可选。
+        'goods_name': 'iPhone 6s 16G', // 商品名称。
+        'goods_num': 1, // 商品数量。
+        'price': 528800, // 商品价格，单位为分。
+        'goods_category': 'smartphone', // 商品类目，可选。
+        'body': '苹果手机 iPhone 6s 16G', // 商品描述信息，可选。
+        'show_url': 'https://www.example.com', // 商品的展示网址，可选。
+      }
+    ]
+  },
+
+  isv_qr: {
+    // 必须，终端号，1~8 位英文或数字，要求不同终端此号码不一样，会显示在对账单中。
+    'terminal_id': 'A0000007',
+
+    // 必须，具体支付渠道，目前支持：alipay、wx、bfb。
+    'pay_channel': 'alipay',
+
+    // 可选，商品列表，示例参考 isv_scan。
+    // 'goods_list': [],
+  },
+
+  isv_wap: {
+    // 必须，终端号，1~8 位英文或数字，要求不同终端此号码不一样，会显示在对账单中。
+    'terminal_id': 'A0000007',
+
+    // 必须，具体支付渠道，目前支持：alipay、wx、bfb。
+    'pay_channel': 'wx',
+
+    // 必须，前台通知地址，支付成功或失败后，跳转到的 URL。
+    'result_url': 'https://www.example.com/payment-result',
+
+    // 可选，商品列表，示例同 isv_scan。
+    // 'goods_list': [],
+  }
 };
 
 module.exports = function(channel) {
