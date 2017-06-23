@@ -1,6 +1,6 @@
 # Change Log
 
-## 2.0.12
+## 2.0.13
 #### 新增
 - 增加 isv_scan, isv_qr, isv_wap 渠道撤销接口
 
