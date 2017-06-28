@@ -144,14 +144,6 @@ pingpp.events.retrieve(
   }
 );
 ```
-``` js
-pingpp.events.list(
-  { limit: 5 },
-  function(err, events) {
-    // YOUR CODE
-  }
-);
-```
 
 ### 企业付款
 ``` js
