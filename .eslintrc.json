@@ -25,11 +25,18 @@
         "no-console": 0,
         "max-len": [
             "error",
-            80,
+            120,
             4,
             {
                 "ignoreComments": true,
                 "ignoreUrls": true
+            }
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "caughtErrorsIgnorePattern": "^ignore",
+                "argsIgnorePattern": "^_"
             }
         ]
     }
