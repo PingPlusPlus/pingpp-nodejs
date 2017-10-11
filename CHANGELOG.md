@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.0.14
+#### 新增
+- 新增重试机制
+- 新增 PingppRateLimitError 异常
+
 ## 2.0.13
 #### 新增
 - 增加 isv_scan, isv_qr, isv_wap 渠道撤销接口
