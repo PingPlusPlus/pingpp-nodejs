@@ -3,9 +3,10 @@ var API_KEY = 'sk_test_ibbTe5jLGCi5rzfH4OqPW9KC';
 // app_id 获取方式：登录 [Dashboard](https://dashboard.pingxx.com)->点击你创建的应用->应用首页->应用 ID(App ID)
 var APP_ID = 'app_1Gqj58ynP0mHeX1q';
 // 设置 api_key
-var pingpp = require('../lib/pingpp')(API_KEY);
+var pingpp = require('../../lib/pingpp')(API_KEY);
+var path = require('path');
 
-pingpp.setPrivateKeyPath(__dirname + '/your_rsa_private_key.pem');
+pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
 var channel = 'alipay';
 var batch_transfer_recipient = require('./batch_transfer_recipient');
@@ -23,7 +24,9 @@ var params = {
 
 params.recipients.push(batch_transfer_recipient(channel));
 
-/* 批量付款 */
+/**
+ * 批量付款
+ */
 pingpp.batchTransfers.create(params, function(err, batchTransfer) {
   if (err != null) {
     console.log('pingpp.batchTransfers.create failed: ', err);

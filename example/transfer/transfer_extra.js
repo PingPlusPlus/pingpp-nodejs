@@ -63,7 +63,8 @@ var channelExtraMap = {
 
     // 必须，4位，开户银行编号，详情请参考 企业付款（银行卡）银行编号说明：https://www.pingxx.com/api#%E9%93%B6%E8%A1%8C%E7%BC%96%E5%8F%B7%E8%AF%B4%E6%98%8E。
     'open_bank_code': '0103',
-  }
+  },
+  balance:{}
 };
 
 var channelRecipientMap = {
@@ -71,6 +72,8 @@ var channelRecipientMap = {
   alipay: 'alipayaccount@gmail.com',
   // 渠道为 wx_pub 时，recipient 需要传 recipient 为用户在商户 appid 下的 open_id
   wx_pub: 'o7xEMsySBFG3MVHI-9VsAJX-j50W',
+  // 渠道为 balance 时，为用户在当前 app 下的用户 id。
+  balance: 'user_test_02'
 };
 
 module.exports = {

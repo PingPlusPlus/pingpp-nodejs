@@ -9,6 +9,8 @@ var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC"
 // 设置 api_key
 var pingpp = require('../lib/pingpp')(API_KEY);
 
+pingpp.setTimeout(60000)
+
 // 通过发起一次退款请求创建一个新的 refund 对象，只能对已经发生交易并且没有全额退款的 charge 对象发起退款
 pingpp.charges.createRefund(
   "ch_bLWP80Ci9S4ODaXLSKLOGe5S",

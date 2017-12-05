@@ -1,10 +1,9 @@
-Pingpp Node.js SDK
-=================
-****
+# Pingpp Node.js SDK
 
 ## 简介
 lib 文件夹下是 Node.js SDK 文件，  
 example 文件夹里面是一个简单的接入示例，该示例仅供参考。
+docs 接口文档
 
 ## 版本要求
 nodejs 版本 v0.8.0 及以上
@@ -12,7 +11,8 @@ nodejs 版本 v0.8.0 及以上
 ## 安装
 `npm install pingpp`  
 或者  
-下载源码后，在目录下运行 `npm install`
+下载源码后，在项目目录下运行 `npm install <path to pingpp-nodejs>`  
+`<path to pingpp-nodejs>` 为 `pingpp-nodejs` 源码路径
 
 ### 初始化
 ``` js
@@ -180,7 +180,7 @@ pingpp.transfers.create({
 }, function(err, transfer) {
   if (err!=null){
     console.log("pingpp.transfers.create(unionpay) fail:",err)
-    return 
+    return
   }
   pingpp.transfers.cancel(
     transfer.id,
@@ -231,7 +231,7 @@ pingpp.batchTransfers.create({
       "amount": 3000, // 付款金额
       "name": "伢子" // 接收者姓名
     }
-  ], 
+  ],
   "type": "b2c" // 付款类型，当前仅支持 b2c 企业付款
 }, function(err, transfer) {
   // YOUR CODE
@@ -275,5 +275,29 @@ pingpp.identification.identify(
   }
 );
 ```
+
+### 接口列表
+- [支付/退款](docs/charge.md)
+- [红包](docs/red_envelope.md)
+- [企业付款](docs/transfer.md)
+- [企业批量付款](docs/batch_transfer.md)
+- [账户](docs/user.md)
+- [账户订单](docs/order.md)
+- [账户充值](docs/recharge.md)
+- [账户优惠券模板](docs/coupon_template.md)
+- [账户优惠券](docs/coupon.md)
+- [查询账户余额明细](docs/balance_transaction.md)
+- [账户余额赠送](docs/balance_bonus.md)
+- [账户余额转账](docs/balance_transfer.md)
+- [账户余额提现](docs/withdrawal.md)
+- [账户余额批量提现确认](docs/batch_withdrawal.md)
+- [分润](docs/royalty.md)
+- [分润结算](docs/royalty_settlement.md)
+- [分润结算明细](docs/royalty_transaction.md)
+- [分润模板](docs/royalty_template.md)
+- [身份证银行卡认证](docs/identification.md)
+- [Event 事件](docs/event.md)
+- [报关接口](docs/transfer.md)
+- [微信公众号获取签名](docs/wx_pub_oauth.md)
 
 **详细信息请参考 [API 文档](https://pingxx.com/document/api?node.js)。**

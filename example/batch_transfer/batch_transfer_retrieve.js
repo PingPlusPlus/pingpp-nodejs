@@ -2,14 +2,17 @@
 var API_KEY = 'sk_test_ibbTe5jLGCi5rzfH4OqPW9KC';
 
 // 设置 api_key
-var pingpp = require('../lib/pingpp')(API_KEY);
+var pingpp = require('../../lib/pingpp')(API_KEY);
+var path = require('path');
 
-pingpp.setPrivateKeyPath(__dirname + '/your_rsa_private_key.pem');
+pingpp.setPrivateKeyPath(path.join(__dirname, '../your_rsa_private_key.pem'));
 
-/* 查询 */
+/**
+ * 查询单个
+ */
 pingpp.batchTransfers.retrieve(
   // 通过 Transfer 对象的 id 查询一个已创建的 Transfer 对象
-  '181610181347533047',
+  '1801708311830114137',
   function(err, batchTransfer) {
     if (err != null) {
       console.log('pingpp.batchTransfers.retrieve failed: ', err);

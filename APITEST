@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# 获取当前shell文件的路径
+SOURCE="$0"
+while [ -h "$SOURCE"  ]; do
+    DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd  )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /*  ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd  )"
+
+FILENAME=(
+    "balance_bonus.js"
+    "balance_transfers.js"
+    "balance_transactions.js"
+    "withdrawal.js"
+    "batch_withdrawals.js"
+    "user.js"
+    "coupon.js"
+    "coupon_template.js"
+    "order.js"
+    "order_refunds.js"
+    "recharge.js"
+    "recharge_refunds.js"
+    "royalty_template.js"
+)
+
+cd "$DIR/example"
+
+function read_dir() {
+    for file in `ls $1`
+    do
+        if [ -d $1"/"$file ]
+        then
+            read_dir $1"/"$file
+        elif [ "${file##*.}"x = "js"x ] && [[ "${FILENAME[@]}" =~ $file ]]
+        then
+            node $1"/"$file
+        fi
+    done
+}
+
+read_dir "$DIR/example"
