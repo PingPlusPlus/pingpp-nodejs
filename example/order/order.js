@@ -73,7 +73,6 @@ pingpp.orders.pay(
   {
     "channel": channel, // 支付渠道
     "charge_amount": 100, // 使用 charge 支付金额
-    "balance_amount":0, // 使用余额支付金额
     "extra": extra
   },
   function(err, order) {

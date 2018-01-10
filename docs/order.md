@@ -41,7 +41,6 @@ pingpp.orders.pay(
   {
     "channel":"alipay",
     "charge_amount": 100,
-    "balance_amount":0
   },
   function(err, order) {
     // YOUR CODE
