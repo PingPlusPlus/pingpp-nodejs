@@ -6,7 +6,7 @@ example 文件夹里面是一个简单的接入示例，该示例仅供参考。
 docs 接口文档
 
 ## 版本要求
-nodejs 版本 v0.8.0 及以上
+nodejs 版本 4 及以上
 
 ## 安装
 `npm install pingpp`  
