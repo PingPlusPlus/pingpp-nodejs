@@ -1,5 +1,7 @@
 'use strict';
 
+// SDK 支持 Promise，以 charge 为例，可以按以下方法调用
+
 const API_KEY = 'sk_test_ibbTe5jLGCi5rzfH4OqPW9KC';
 
 var pingpp = require('../lib/pingpp')(API_KEY);

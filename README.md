@@ -299,5 +299,6 @@ pingpp.identification.identify(
 - [Event 事件](docs/event.md)
 - [报关接口](docs/transfer.md)
 - [微信公众号获取签名](docs/wx_pub_oauth.md)
+- [签约](docs/agreement.md)
 
 **详细信息请参考 [API 文档](https://pingxx.com/document/api?node.js)。**
