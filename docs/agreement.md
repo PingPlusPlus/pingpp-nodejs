@@ -30,3 +30,13 @@ pingpp.agreements.list(
   }
 );
 ```
+
+### 解约
+``` js
+pingpp.agreements.cancel(
+  'AGREEMENT_ID',
+  function(err, agreement) {
+    // YOUR CODE
+  }
+);
+```
