@@ -17,5 +17,4 @@ pingpp.balanceTransactions.retrieve(
     // YOUR CODE
   }
 );
-
 ```
