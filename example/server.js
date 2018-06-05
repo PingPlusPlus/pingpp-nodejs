@@ -39,7 +39,7 @@ var createPayment = function(channel, amount, client_ip, open_id, cb){
       break;
     case 'wx_pub':
       extra = {
-        'open_id': open_id// 用户在商户微信公众号下的唯一标识，获取方式可参考 wxPubOauth.js
+        'open_id': open_id// 用户在商户微信公众号下的唯一标识
       };
       break;
   }

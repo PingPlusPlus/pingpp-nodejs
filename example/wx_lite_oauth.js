@@ -8,13 +8,20 @@ var wxLiteAppId = '<WX_LITE_APP_ID>';
 var wxLiteAppSecret = '<WX_LITE_APP_SECRET>';
 var code = '<CODE_FROM_URL_QUERY>'; // 从请求的 URL QUERY 中获取
 
-pingpp.wxLiteOauth.getOpenid(wxLiteAppId, wxLiteAppSecret, code, function(err, openid, data){
-  console.log(openid);
-  console.log(data);
-  // data 包含 openid 和 session_key 格式:
-  // { "openid": "OPENID", "session_key": "SESSIONKEY" }
+pingpp.wxOAuth.getWxLiteOpenid(
+  wxLiteAppId, wxLiteAppSecret, code,
+  function(err, res) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(res);
+    }
 
-  // ...
-  // pass openid to extra['open_id'] and create a charge
-  // ...
-});
+    // res 包含 openid 和 session_key 格式:
+    // { "openid": "OPENID", "session_key": "SESSIONKEY" }
+
+    // ...
+    // pass openid to extra['open_id'] and create a charge
+    // ...
+  }
+);

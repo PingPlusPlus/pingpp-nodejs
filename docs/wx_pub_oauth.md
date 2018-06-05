@@ -1,7 +1,7 @@
 # 微信公众号获取签名
 如果使用微信 JS-SDK 来调起支付，需要在创建 `charge` 后，获取签名（`signature`），传给 HTML5 SDK。
 ``` js
-pingpp.wxPubOauth.getJsapiTicket(wx_app_id, wx_app_secret, function(e, response){
+pingpp.wxOAuth.getJsapiTicket(wx_app_id, wx_app_secret, function(e, response){
   var ticket = response['ticket'];
 });
 ```
@@ -9,7 +9,7 @@ pingpp.wxPubOauth.getJsapiTicket(wx_app_id, wx_app_secret, function(e, response)
 
 _下面方法中 `url` 是当前网页的 URL，不包含`#`及其后面部分_
 ``` js
-var signature = pingpp.wxPubOauth.getSignature(charge, ticket, url);
+var signature = pingpp.wxOAuth.getSignature(charge, ticket, url);
 ```
 然后在 HTML5 SDK 里调用
 ``` js
