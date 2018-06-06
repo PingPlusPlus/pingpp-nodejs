@@ -298,7 +298,7 @@ pingpp.identification.identify(
 - [身份证银行卡认证](docs/identification.md)
 - [Event 事件](docs/event.md)
 - [报关接口](docs/transfer.md)
-- [微信公众号获取签名](docs/wx_pub_oauth.md)
+- [微信公众号/小程序获取 openid](docs/wx_oauth.md)
 - [签约](docs/agreement.md)
 - [余额结算](docs/balance_settlement.md)
 - [查询银行卡信息](docs/card_info.md)
