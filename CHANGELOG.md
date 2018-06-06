@@ -4,7 +4,12 @@
 #### 新增
 - 添加余额结算接口 (balance_settlements)
 - 添加银行卡信息查询接口 (card_info)
-- 添加微信小程序 openid 及 session_key 获取接口 (wxLiteOauth)
+- 添加微信小程序 openid 及 session_key 获取接口 (`pingpp.wxOAuth.getWxLiteOpenid`)
+
+#### 更改
+- 废弃 `pingpp.wxPubOauth`
+- 使用 `pingpp.wxOAuth` 代替 `pingpp.wxPubOauth`
+- 其中，使用 `pingpp.wxOAuth.getWxPubOpenid` 代替 `pingpp.wxPubOauth.getOpenid`
 
 ## 2.1.2 (2018-05-18)
 #### 新增
