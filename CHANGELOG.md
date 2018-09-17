@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.4
+
+#### 更改
+
+- 去除指定 TLS 版本
+
 ## 2.1.3
 #### 新增
 - 添加余额结算接口 (balance_settlements)
