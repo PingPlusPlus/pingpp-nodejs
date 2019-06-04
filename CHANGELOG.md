@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.1.5
+
+### 修正
+
+- 修正 coupon_template id
+- `new Buffer()` -> `Buffer.from()`
+
 ## 2.1.4
 
 #### 更改
