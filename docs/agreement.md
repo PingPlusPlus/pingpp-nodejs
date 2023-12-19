@@ -1,27 +1,30 @@
 # 签约
 
 ### 创建
-``` js
+
+```js
 pingpp.agreements.create({
-  contract_no: '123456789',
-  app: 'APP_ID',
-  channel: channel,
-  extra: extra,
-  metadata: {}
-}, function(err, agreement) {
-  // YOUR CODE
+    contract_no: '123456789',
+    app: 'APP_ID',
+    channel: channel,
+    extra: extra,
+    metadata: {}
+}, function (err, agreement) {
+    // YOUR CODE
 });
 ```
 
 ### 查询
-``` js
+
+```js
 pingpp.agreements.retrieve(
-  'AGREEMENT_ID',
-  function(err, agreement) {
-    // YOUR CODE
-  }
+    'AGREEMENT_ID',
+    function (err, agreement) {
+        // YOUR CODE
+    }
 );
 ```
+
 ``` js
 pingpp.agreements.list(
   { app: 'APP_ID', per_page: 3 },
@@ -32,11 +35,23 @@ pingpp.agreements.list(
 ```
 
 ### 解约
-``` js
+
+```js
 pingpp.agreements.cancel(
-  'AGREEMENT_ID',
-  function(err, agreement) {
-    // YOUR CODE
-  }
+    'AGREEMENT_ID',
+    function (err, agreement) {
+        // YOUR CODE
+    }
+);
+```
+
+### 预扣费通知
+
+```js
+pingpp.agreements.notify(
+    'AGREEMENT_ID',
+    function (err, resp) {
+        // YOUR CODE
+    }
 );
 ```
